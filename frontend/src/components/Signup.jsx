@@ -35,7 +35,7 @@ const Signup = () => {
 
     if (response.status === 201) {
       alert(`Welcome to Hackathon ${data.name}!`);
-      setUserToken(data.token);
+      setUserToken(data.accessToken);
       navigate("/dashboard");
     } else {
       alert(data.message);

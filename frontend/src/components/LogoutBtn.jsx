@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { removeUserToken } from "../utils/removeUserToken";
 
 const LogoutButton = () => {
   const navigate = useNavigate();
@@ -7,10 +8,11 @@ const LogoutButton = () => {
   const handleLogout = () => {
     // Perform logout actions (e.g., clear authentication state)
     // For example, if using local storage to manage authentication state:
-    localStorage.removeItem('token'); // Clear token from local storage
+    removeUserToken(); // Clear token from local storage
 
     // Redirect to the login page
     navigate('/login');
+    navigate(0);
   };
 
   return (
